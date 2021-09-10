@@ -40,7 +40,7 @@ function isPositive( number ) {
   if ( number > 0 ){
     return true;
   } else {
-    return false
+    return false;
   }
 }
 // Call the function to test each outcome (true & false)
@@ -53,16 +53,29 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
 function getLast( array ) {
-
+  if ( array.length > 0 ){
+    return array[array.length - 1];
+  }
+  if ( array.length <= 0){
+    return 'undefined';
+  }
 }
-
+console.log( 'The last item in the array is', getLast( [ 'pen', 'paper', 'book'] ));
+console.log( 'The last item in the array is', getLast( [] ));
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
+  let numberArray = [ 11, 22, 33, 44, 55 ]
 function find( value, array ){
-
+  for ( let i=0; i<array.length; i++){
+  if ( value === array[i]){
+    return true;
+    }
+  }
+  return false;
 }
-
+console.log( 'Found the value:', find( 44, numberArray));
+console.log( 'Found the value:', find( 66, numberArray));
 // ----------------------
 // Stretch Goals
 // ----------------------
